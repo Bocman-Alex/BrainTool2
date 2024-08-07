@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="likeBar">#FFB884</color>
+    <color name="braunText"> #683F22</color>
+    <color name="mainBack"> #FFF9F7</color>
+    <color name="textOnWhite"> #9C5F45</color>
+</resources>
