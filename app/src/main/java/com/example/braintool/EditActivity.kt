@@ -2,8 +2,6 @@ package com.example.braintool
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,24 +20,16 @@ class EditActivity : AppCompatActivity() {
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 //            insets
       //  }
-binding.bDone.setOnClickListener{
-
-    initButtons()
-
-}
+        initButtons()
     }
-
-
     private fun  initButtons() = with(binding){
-            val group =   Group(edGroupTitle.text.toString())
-        Log.d("logDebug", "Получено зн из edGroupTitle = $group ")
-            val editIntent = Intent(this@EditActivity,MainActivity::class.java)
-        Log.d("logDebug", "передает зн из ЕдА === $group")
-                editIntent.putExtra("group", group)
-
-            //     startActivity(editIntent)
-               setResult(RESULT_OK ,editIntent)
-                finish()
+        bDone.setOnClickListener{
+            val group = binding.edGroupTitle.text.toString()
+            val editIntent = Intent().apply {
+                putExtra("group", group)
+            }
+            setResult(RESULT_OK ,editIntent)
+            finish()
         }
     }
-
+}
