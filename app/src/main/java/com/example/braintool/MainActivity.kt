@@ -18,9 +18,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.braintool.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() ,GroupAdapter.Listener{
     lateinit var binding: ActivityMainBinding
-    private val adapter= GroupAdapter()
+    private val adapter= GroupAdapter(this)
     private var editLaunncher:ActivityResultLauncher<Intent>? =null
     private var index = 0
 
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding=ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.likeBar)
+            window.statusBarColor = ContextCompat.getColor(this, R.color.likeBar)
             init()
 
 
@@ -58,5 +58,10 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+    }
+
+    override fun onClick(group: Group) {
+        Toast.makeText(this, "че тапаешь?", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Хамяка не хватает?", Toast.LENGTH_SHORT).show()
     }
 }

@@ -6,13 +6,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.braintool.databinding.GroupViewBinding
 
-class GroupAdapter :RecyclerView.Adapter<GroupAdapter.GroupHolder>(){
+class GroupAdapter (val listener: Listener):RecyclerView.Adapter<GroupAdapter.GroupHolder>(){
     val groupList = ArrayList<Group>()
     class GroupHolder(item:View): RecyclerView.ViewHolder (item){
             val binding =GroupViewBinding.bind(item)
-        fun bind(group: Group) = with(binding){
+        fun bind(group: Group,listener: Listener) = with(binding){
             tvTitle.text=group.title           //////
-
+            itemView.setOnClickListener{
+                listener.onClick(group)
+            }
         }
     }
 
@@ -26,13 +28,16 @@ class GroupAdapter :RecyclerView.Adapter<GroupAdapter.GroupHolder>(){
     }
 
     override fun onBindViewHolder(holder: GroupHolder, position: Int) {
-        holder.bind(groupList[position])
+        holder.bind(groupList[position],listener)
     }
 
 
     fun addGroup(group: Group){
         groupList.add(group)
         notifyDataSetChanged()
+    }
+    interface  Listener {
+        fun onClick(group: Group)
     }
 
 }
