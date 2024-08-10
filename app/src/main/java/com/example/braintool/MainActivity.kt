@@ -61,7 +61,6 @@ class MainActivity : AppCompatActivity() ,GroupAdapter.Listener{
     }
 
     override fun onClick(group: Group) {
-        Toast.makeText(this, "че тапаешь?", Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, "Хамяка не хватает?", Toast.LENGTH_SHORT).show()
+       startActivity(Intent(this,ContentActivity::class.java).apply { putExtra("toContent",group.toString()) })
     }
 }
