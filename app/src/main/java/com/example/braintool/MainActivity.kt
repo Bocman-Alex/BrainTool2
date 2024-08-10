@@ -31,10 +31,14 @@ class MainActivity : AppCompatActivity() ,GroupAdapter.Listener{
         binding=ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-            window.statusBarColor = ContextCompat.getColor(this, R.color.likeBar)
-            init()
 
 
+
+
+
+        window.statusBarColor = ContextCompat.getColor(this, R.color.likeBar)
+
+        init()
         editLaunncher=registerForActivityResult(ActivityResultContracts.StartActivityForResult())
         {
             if (it.resultCode == RESULT_OK)
