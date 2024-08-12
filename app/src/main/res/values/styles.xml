@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomToolbarNavigationButtonStyle" >
+        <item name="icon">@drawable/baseline_arrow_back_24</item>
+        <item name="android:tint">@color/braunText</item>
+        <item name="android:minWidth">45dp</item>
+        <item name="android:minHeight">45dp</item>
+    </style>
+
+</resources>
