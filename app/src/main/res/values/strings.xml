@@ -3,4 +3,5 @@
     <string name="select_ques">Select a group of questions</string>
     <string name="group_name">Group name</string>
     <string name="questions">Questions:</string>
+    <string name="add_que">Add question</string>
 </resources>
