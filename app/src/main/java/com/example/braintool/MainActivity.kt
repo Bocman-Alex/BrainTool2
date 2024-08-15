@@ -55,8 +55,6 @@ class MainActivity : AppCompatActivity() ,GroupAdapter.Listener{
         apply {
             rcView.layoutManager = GridLayoutManager(this@MainActivity ,2)
             rcView.adapter = adapter
-
-
             addButton.setOnClickListener {
             editLaunncher?.launch(Intent(this@MainActivity,EditActivity::class.java))
 
