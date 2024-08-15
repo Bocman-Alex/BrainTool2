@@ -15,11 +15,12 @@ class EditActivity : AppCompatActivity() {
         binding=ActivityEditBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-      //  }
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
+        binding.toolbar.setNavigationOnClickListener {
+            finish()
+        }
         initButtons()
     }
     private fun  initButtons() = with(binding){

@@ -6,4 +6,5 @@
     <color name="braunText"> #683F22</color>
     <color name="mainBack"> #FFF9F7</color>
     <color name="textOnWhite"> #9C5F45</color>
+    <color name="addColor">#59D94E</color>
 </resources>
